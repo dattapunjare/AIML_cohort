@@ -1,0 +1,177 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+% Page settings
+\geometry{
+    a4paper,
+    margin=0.75in
+}
+
+% Reduce space before and after sections
+\titleformat{\section}
+  {\large\bfseries}
+  {\thesection}
+  {0.5em}
+  {}
+
+\titlespacing*{\section}
+  {0pt}
+  {10pt}
+  {4pt}
+
+% Reduce paragraph spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Prompting Techniques}}
+\end{center}
+
+\vspace{8pt}
+
+\section{Zero-Shot Prompting}
+
+Asking the model to do a task with no examples given.
+
+\textbf{Example:}
+
+\begin{quote}
+``Calculate the area of a rectangle with length 12 cm and width 5 cm.''
+\end{quote}
+
+
+\section{Few-Shot Prompting}
+
+Giving a few examples before the actual task so the model can learn the pattern.
+
+\textbf{Example:}
+
+\begin{quote}
+English: Good morning $\rightarrow$ French: Bonjour
+
+English: Thank you $\rightarrow$ French: Merci
+
+English: See you soon $\rightarrow$ French: ?
+\end{quote}
+
+
+\section{Chain-of-Thought (CoT) Prompting}
+
+Asking the model to reason step-by-step before giving the final answer.
+
+\textbf{Example:}
+
+\begin{quote}
+``A student has 25 chocolates and gives 8 to a friend. Then the student receives 10 more chocolates. How many chocolates does the student have? Think step by step.''
+\end{quote}
+
+
+\section{Zero-Shot Chain-of-Thought}
+
+Just adding ``think step by step'' without giving examples.
+
+\textbf{Example:}
+
+\begin{quote}
+``A shirt costs ₹800 and has a 25\% discount. What is the final price? Let's think step by step.''
+\end{quote}
+
+
+\section{Role-Based (Persona) Prompting}
+
+Assigning a role or identity to the model to shape its tone/expertise.
+
+\textbf{Example:}
+
+\begin{quote}
+``You are an experienced Python teacher. Explain what a dictionary is in Python to a beginner.''
+\end{quote}
+
+
+\section{Instruction-Based Prompting}
+
+Giving clear, direct instructions about the desired output format or behavior.
+
+\textbf{Example:}
+
+\begin{quote}
+``Explain the advantages of artificial intelligence in exactly 5 bullet points.''
+\end{quote}
+
+
+\section{Contextual Prompting}
+
+Providing background/context before asking the question.
+
+\textbf{Example:}
+
+\begin{quote}
+``I'm a beginner in programming. Explain what a Python function is using simple language and an easy example.''
+\end{quote}
+
+
+\section{Self-Consistency Prompting}
+
+Asking the model to generate multiple reasoning paths and pick the most consistent answer (usually done programmatically, not just in one prompt).
+
+\textbf{Example:}
+
+\begin{quote}
+``Solve this math problem using 5 different approaches and choose the answer that appears most frequently.''
+\end{quote}
+
+
+\section{Prompt Chaining}
+
+Breaking a complex task into multiple prompts, where the output of one feeds into the next.
+
+\textbf{Example:}
+
+\begin{quote}
+\textbf{Prompt 1:} ``Extract the important points from this article.''
+
+\textbf{Prompt 2:} ``Using those points, create a short summary.''
+
+\textbf{Prompt 3:} ``Convert the summary into 5 bullet points.''
+\end{quote}
+
+
+\section{Tree-of-Thought Prompting}
+
+The model explores multiple possible reasoning branches before settling on an answer (more advanced/structured than CoT).
+
+\textbf{Example:}
+
+\begin{quote}
+``Consider three different ways to solve this problem. Compare each method and select the most effective one.''
+\end{quote}
+
+
+\section{Retrieval-Augmented Prompting (RAG-style)}
+
+Providing external documents/data as context, then asking questions based on that content.
+
+\textbf{Example:}
+
+\begin{quote}
+``Here is a document about a company's leave policy: [text]. Based on this document, how many paid leaves are available to employees?''
+\end{quote}
+
+
+\section{Negative Prompting}
+
+Telling the model what NOT to do or include.
+
+\textbf{Example:}
+
+\begin{quote}
+``Write a short explanation of machine learning, but do not use technical terms or complicated language.''
+\end{quote}
+
+\end{document}
