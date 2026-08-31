@@ -59,7 +59,7 @@ Output :
 '''Weather information for Nashik'''
 
 
-## 6.Call the function for Pune
+## 6.Call the function for nashik
 
 Input :
 ''' write a python function get_wheather(nashik) and show how it would call it for nashik '''
