@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Prompting Techniques}
+\author{Datta Punjare}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{One-Shot Prompting}
+
+\begin{itemize}
+    \item One-shot prompting means giving the model one example of the task, so it can understand the pattern and produce a similar answer.
+\end{itemize}
+
+\subsection*{Input}
+\begin{verbatim}
+Hello -> Bonjour
+Now translate: GoodBye
+\end{verbatim}
+
+\subsection*{Output}
+\begin{verbatim}
+Goodbye -> Au revoir
+\end{verbatim}
+
+\subsection*{Observation}
+Only one example is given as a demonstration at the start of the chat. The model observes the given example, understands the pattern, and applies the same pattern to the new input.
+
+% ------------------------------------------------
+
+\section{Few-Shot Prompting}
+
+\begin{itemize}
+    \item Few-shot prompting means giving the model multiple examples of a task so that it can understand the pattern and apply it to a new input.
+\end{itemize}
+
+\subsection*{Input}
+\begin{verbatim}
+Hello -> Bonjour
+Thanks -> Merci
+Now translate: GoodBye
+\end{verbatim}
+
+\subsection*{Output}
+\begin{verbatim}
+GoodBye -> Au revoir
+\end{verbatim}
+
+\subsection*{Observation}
+Provide multiple examples to the model. By observing these examples, the model understands the pattern better and applies it to the new input.
+
+% ------------------------------------------------
+
+\section{Zero-Shot Prompting}
+
+\begin{itemize}
+    \item Zero-shot prompting means giving the model a task without providing any examples. It gives only an instruction or question and tells the model the steps to achieve the answer.
+\end{itemize}
+
+\subsection*{Input}
+\begin{verbatim}
+If a train travels 60 km in 1.5 hours, what is its speed?
+\end{verbatim}
+
+\subsection*{Output}
+\begin{verbatim}
+Speed = Distance / Time
+60 / 1.5 = 40
+Answer: 40 km/h
+\end{verbatim}
+
+\subsection*{Observation}
+Zero-shot prompting does not provide any example to the AI. It directly asks a question to the model. The model answers the question using its pre-trained knowledge.
+
+% ------------------------------------------------
+
+\section{Natural Language Query (Direct Answer)}
+
+\subsection*{Input}
+\begin{verbatim}
+What's the weather in Nashik?
+\end{verbatim}
+
+\subsection*{Output}
+\begin{verbatim}
+Right now in Nashik, it is around 28 degrees C with rain.
+The weather is breezy, with more showers possible this afternoon.
+\end{verbatim}
+
+\subsection*{Observation}
+The model did not generate the weather details itself. Instead, it took the information from a live weather API connected in the background.
+
+% ------------------------------------------------
+
+\section{Code Generation Request (Function Simulation)}
+
+\subsection*{Input}
+\begin{verbatim}
+Write a Python function get_weather(city)
+and show how it would call it for Nashik.
+\end{verbatim}
+
+\subsection*{Output}
+\begin{verbatim}
+Weather information for Nashik
+\end{verbatim}
+
+% ------------------------------------------------
+
+\section{Call the Function for Nashik}
+
+\subsection*{Input}
+\begin{verbatim}
+Write a Python function get_weather(nashik)
+and show how it would call it for Nashik.
+\end{verbatim}
+
+\subsection*{Output}
+\begin{verbatim}
+Getting weather for Nashik
+\end{verbatim}
+
+\end{document}
