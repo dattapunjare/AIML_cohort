@@ -1,0 +1,108 @@
+Q1.
+
+a)
+
+to compute a neuron network output need to calculate weight sum of input and bias
+
+formula = (a1.w1)+(a2.w2)+bias
+x1=0 , x2 = 3, w1 = 1.0 , w2 = 0.2 , bias = 0.5
+
+= (0 * 1.0 ) + (3 * 0.2) + 0.5
+
+= 0 + 0.6 + 0.5
+
+= 1.1
+
+
+C)
+
+Activation funcation need to check wheater the the neuron input should pass furtur or not to output.
+With the linear way no matter how many inputs it has
+
+
+
+
+#Q2.Code
+
+import torch
+import torch.nn as nn
+
+#define neural network
+model = nn.Sequential(
+    nn.Linear(3,5),    #First layer
+    nn.Linear(5,1)    #secound layer
+)
+
+#Create random input tensor of shape(1,3)
+x = torch.rand(1,3)
+
+output = model(x)
+
+print("Output:", output)
+print("Uotput shape", output.shape)
+
+Q2 Inference
+
+a)
+
+if each request takes 200ms
+and send 10 model request
+
+total time = 200ms * 10
+
+=2000ms
+
+
+C)
+Why batch over sequential
+
+1.Batch process save Reduce latency in between the requests.
+2.Improve efficiency by performing multiple tasks.
+
+
+
+
+import datasets
+from transformers import pipeline
+
+summarization = pipeline(summarization)
+
+text = "To generate a new word/token requried entire previous sequence of tokens.As the size of output increse llm need to store the previous words to track then in KV-CACHE. Each token is fully depends on the previous test. Thats why longer output takes more time to generate ."
+
+
+
+3.LLMs
+
+Q1
+
+A)
+Sentence = "LLMs generate text one token at a time"
+
+words = 8
+Tokens = 8
+
+C)
+To generate a new word/token requried entire previous sequence of tokens.As the size of output increse llm need to store the previous words to track then in KV-CACHE.
+Each token is fully depends on the previous test. Thats why longer output takes more time to generate .
+
+from transformers import pipeline
+
+generator = pipeline("text-generation", model="gpt2")
+
+prompt = "My favorite hobby is,"
+
+short = generator(prompt,max_new_tokens=20)
+print("short output",short )
+
+long = generator(prompt,max_new_tokens=50)
+print("short output",long )
+
+
+Q .I am hirable
+
+Ans: Yes, i think i am hirable/suitable for entry level AI AUTOMATION ENGINEER.  I have learn python, APIs, GitHub, and I am currently learning AI/ML And  LLMs. Ai role commonly required python, llm , api integration.
+Yes, I think i am hirable/suitable for entry level AI Automation Engineer role. Based on the current job requirements, I already have a good foundation knowledge in Python, SQL, Git/GitHub, AI/ML, LLM concepts, prompt engineering, APIs , RAG, AI agents. I also created projects on AI and Python.
+
+I need to strengthening my skills in n8n/workflow automation, API integrations, MCP and deploying AI applications.Other than that i have strong fundamental knowledge in above mention things.
+
+Thatsway, I think I am a good fit for AI Automation Engineer Intern OR Junior AI Automation roles, And continuing to build more real-world projects and solve practical problem while continue to improve my skills
